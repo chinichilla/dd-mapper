@@ -16,7 +16,7 @@ class MapUpload extends Component {
       event.preventDefault()
       const mapData = new FormData()
       mapData.append('mapFile', this.state.mapFile)
-      await axios.post('/upload', mapData)
+      await axios.post('/images', mapData)
       this.setState({mapFile: null})
     } catch (error) {
       console.error()
