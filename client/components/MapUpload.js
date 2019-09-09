@@ -1,36 +1,43 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import {connect} from 'react-redux'
-import {Form, Button, Checkbox} from 'semantic-ui-react'
+import React, {Component} from 'react'
+import axios from 'axios'
 
-/**
- * COMPONENT
- */
-export const MapUpload = props => {
-  const {email} = props
+class MapUpload extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      mapFile: null
+    }
+    this.onFileSubmit = this.onFileSubmit.bind(this)
+    this.onChange = this.onChange.bind(this)
+  }
 
-  return (
-    <div>
-      <h3>Map {email}</h3>
-      <Button>Click Here</Button>
-    </div>
-  )
-}
+  async onFileSubmit(event) {
+    try {
+      event.preventDefault()
+      const mapData = new FormData()
+      mapData.append('mapFile', this.state.mapFile)
+      await axios.post('/images', mapData)
+      this.setState({mapFile: null})
+    } catch (error) {
+      console.error()
+    }
+  }
 
-/**
- * CONTAINER
- */
-const mapState = state => {
-  return {
-    email: state.user.email
+  onChange(event) {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.onFileSubmit}>
+        <h1>Map Upload</h1>
+        <input type="file" name="mapFile" onChange={this.onChange} />
+        <button type="submit">Upload</button>
+      </form>
+    )
   }
 }
 
-export default connect(mapState)(MapUpload)
-
-/**
- * PROP TYPES
- */
-MapUpload.propTypes = {
-  email: PropTypes.string
-}
+export default MapUpload
