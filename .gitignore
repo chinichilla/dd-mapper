@@ -1,11 +1,8 @@
 node_modules
 public/bundle.js
 public/bundle.js.map
-secrets
-secrets/secrets.js
-secrets/aws-credentials.js
+secrets.js
 .DS_Store
 npm-debug.log
 yarn-error.log
-semantic
 package-lock.json

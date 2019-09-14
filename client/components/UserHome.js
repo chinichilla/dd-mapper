@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {Form, Button, Checkbox} from 'semantic-ui-react'
+import MapCard from './MapCard'
 
 /**
  * COMPONENT
@@ -11,8 +11,9 @@ export const UserHome = props => {
 
   return (
     <div>
+      <MapCard />
       <h3>Welcome, {email}</h3>
-      <Button>Click Here</Button>
+      {/* <Button>Click Here</Button> */}
     </div>
   )
 }
