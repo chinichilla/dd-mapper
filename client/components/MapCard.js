@@ -1,18 +1,22 @@
 import React from 'react'
-import {Row, Col, Card, CardTitle} from 'react-materialize'
+import {Card, CardTitle, MediaBox} from 'react-materialize'
 
 /**
  * COMPONENT
  */
 const MapCard = props => {
   return (
-    <Row>
-      <Col m={6} s={12}>
-        <Card header={<CardTitle />} actions={[<a />]}>
-          Here is the standard card with an image thumbnail.
-        </Card>
-      </Col>
-    </Row>
+    <Card
+      header={
+        <MediaBox>
+          {/* make responsive */}
+          <img src={props.mapImage.imageUrl} width="200" alt="" />
+        </MediaBox>
+      }
+      actions={[<a />]}
+    >
+      Here is the standard card with an image thumbnail.
+    </Card>
   )
 }
 

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch, Redirect} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, UserHome, MapUpload} from './components'
+import {Login, Signup, AllMapsScreen, MapUploadScreen} from './components'
 import {me} from './store'
 
 /**
@@ -25,9 +25,9 @@ class Routes extends Component {
         {isLoggedIn && (
           <Switch>
             {/* Routes placed here are only available after logging in */}
-            <Route path="/upload" component={MapUpload} />
-            <Route path="/home" component={UserHome} />
-            <Redirect from="/" to="/home" />
+            <Route path="/upload" component={MapUploadScreen} />
+            <Route path="/maps" component={AllMapsScreen} />
+            <Redirect from="/" to="/maps" />
           </Switch>
         )}
         {/* Displays our Login component as a fallback */}
