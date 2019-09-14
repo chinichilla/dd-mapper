@@ -1,27 +1,31 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import {logout} from '../store'
+import {Navbar, NavItem} from 'react-materialize'
 
-const Navbar = ({handleClick, isLoggedIn}) => (
+const MainNavbar = ({handleClick, isLoggedIn}) => (
   <div>
-    <h1>D&D Mapper</h1>
     <nav>
       {isLoggedIn ? (
         <div>
           {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
-          <Link to="/upload">Upload</Link>
-          <a href="#" onClick={handleClick}>
-            Logout
-          </a>
+          <Navbar brand={<h1>D&D Mapper</h1>} alignLinks="right">
+            <NavItem href="/maps">Maps </NavItem>
+            <NavItem href="/upload">Upload</NavItem>
+            <NavItem href="#" onClick={handleClick}>
+              Logout
+            </NavItem>
+          </Navbar>
         </div>
       ) : (
         <div>
           {/* The navbar will show these links before you log in */}
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
+          <Navbar brand={<h1>D&D Mapper</h1>} alignLinks="right">
+            <NavItem href="/login">Login </NavItem>
+            <NavItem href="/signup">Sign Up</NavItem>
+          </Navbar>
         </div>
       )}
     </nav>
@@ -46,12 +50,12 @@ const mapDispatch = dispatch => {
   }
 }
 
-export default connect(mapState, mapDispatch)(Navbar)
+export default connect(mapState, mapDispatch)(MainNavbar)
 
 /**
  * PROP TYPES
  */
-Navbar.propTypes = {
+MainNavbar.propTypes = {
   handleClick: PropTypes.func.isRequired,
   isLoggedIn: PropTypes.bool.isRequired
 }

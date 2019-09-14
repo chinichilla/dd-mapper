@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, CardTitle, MediaBox} from 'react-materialize'
+import {Card, MediaBox} from 'react-materialize'
 
 /**
  * COMPONENT
@@ -13,7 +13,7 @@ const MapCard = props => {
           <img src={props.mapImage.imageUrl} width="200" alt="" />
         </MediaBox>
       }
-      actions={[<a />]}
+      actions={[<a key={props.mapImage.id} />]}
     >
       Here is the standard card with an image thumbnail.
     </Card>
