@@ -4,6 +4,7 @@
  * having to figure out which file they belong to!
  */
 export {default as MainNavbar} from './MainNavbar'
+export {default as MainFooter} from './MainFooter'
 export {default as AllMapsScreen} from './AllMapsScreen'
 export {default as MapUploadScreen} from './MapUploadScreen'
 export {Login, Signup} from './auth-form'

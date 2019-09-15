@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-// import {Link} from 'react-router-dom'
 import {logout} from '../store'
 import {Navbar, NavItem} from 'react-materialize'
+
+const brandColor = <span style={{color: '#FFFFFF'}}>D&D Mapper</span>
 
 const MainNavbar = ({handleClick, isLoggedIn}) => (
   <div>
@@ -11,7 +12,11 @@ const MainNavbar = ({handleClick, isLoggedIn}) => (
       {isLoggedIn ? (
         <div>
           {/* The navbar will show these links after you log in */}
-          <Navbar brand={<h1>D&D Mapper</h1>} alignLinks="right">
+          <Navbar
+            className="brand-logo center"
+            brand={brandColor}
+            alignLinks="right"
+          >
             <NavItem href="/maps">Maps </NavItem>
             <NavItem href="/upload">Upload</NavItem>
             <NavItem href="#" onClick={handleClick}>
@@ -22,7 +27,7 @@ const MainNavbar = ({handleClick, isLoggedIn}) => (
       ) : (
         <div>
           {/* The navbar will show these links before you log in */}
-          <Navbar brand={<h1>D&D Mapper</h1>} alignLinks="right">
+          <Navbar brand={<a />} alignLinks="right">
             <NavItem href="/login">Login </NavItem>
             <NavItem href="/signup">Sign Up</NavItem>
           </Navbar>

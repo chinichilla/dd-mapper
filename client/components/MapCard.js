@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, MediaBox} from 'react-materialize'
+import {Card, CardTitle} from 'react-materialize'
 
 /**
  * COMPONENT
@@ -7,15 +7,11 @@ import {Card, MediaBox} from 'react-materialize'
 const MapCard = props => {
   return (
     <Card
-      header={
-        <MediaBox>
-          {/* make responsive */}
-          <img src={props.mapImage.imageUrl} width="200" alt="" />
-        </MediaBox>
-      }
-      actions={[<a key={props.mapImage.id} />]}
+      className="small"
+      header={<CardTitle image={props.mapImage.imageUrl}>Map Title</CardTitle>}
+      actions={[<a href="#">Link to get to map page</a>]}
     >
-      Here is the standard card with an image thumbnail.
+      Description of the map
     </Card>
   )
 }

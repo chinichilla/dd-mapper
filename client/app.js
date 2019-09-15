@@ -1,5 +1,5 @@
 import React from 'react'
-import {MainNavbar} from './components'
+import {MainNavbar, MainFooter} from './components'
 import Routes from './Routes'
 
 const App = () => {
@@ -7,6 +7,7 @@ const App = () => {
     <div>
       <MainNavbar />
       <Routes />
+      <MainFooter />
     </div>
   )
 }
