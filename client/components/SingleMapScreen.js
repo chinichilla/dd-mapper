@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {MediaBox} from 'react-materialize'
+// import {MediaBox} from 'react-materialize'
+// import snapToGrid from './snapToGrid'
+// import {DropTarget} from 'react-dnd'
 
 class SingleMapScreen extends Component {
   constructor(props) {
@@ -43,9 +45,9 @@ class SingleMapScreen extends Component {
 
     return (
       <div>
-        <MediaBox caption="Your map" width="350">
-          <img src={mapImage.imageUrl} />
-        </MediaBox>
+        <canvas id="tutorial" width="150" height="150">
+          <img src={mapImage.imageUrl} width="150" height="150" />
+        </canvas>
       </div>
     )
   }
