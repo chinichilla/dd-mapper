@@ -2,7 +2,13 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter, Route, Switch, Redirect} from 'react-router-dom'
 import PropTypes from 'prop-types'
-import {Login, Signup, AllMapsScreen, MapUploadScreen} from './components'
+import {
+  Login,
+  Signup,
+  AllMapsScreen,
+  MapUploadScreen,
+  SingleMapScreen
+} from './components'
 import {me} from './store'
 
 /**
@@ -26,7 +32,8 @@ class Routes extends Component {
           <Switch>
             {/* Routes placed here are only available after logging in */}
             <Route path="/upload" component={MapUploadScreen} />
-            <Route path="/maps" component={AllMapsScreen} />
+            <Route exact path="/maps" component={AllMapsScreen} />
+            <Route path="/maps/:mapId" component={SingleMapScreen} />
             <Redirect from="/" to="/maps" />
           </Switch>
         )}

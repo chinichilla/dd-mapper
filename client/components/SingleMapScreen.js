@@ -1,14 +1,10 @@
 import React, {Component} from 'react'
-import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import MapCard from './MapCard'
-import {Row, Col} from 'react-materialize'
+// import {MediaBox} from 'react-materialize'
+// import snapToGrid from './snapToGrid'
+// import {DropTarget} from 'react-dnd'
 
-/**
- * COMPONENT
- */
-
-class AllMapsScreen extends Component {
+class SingleMapScreen extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -43,25 +39,15 @@ class AllMapsScreen extends Component {
   }
 
   render() {
-    const {email} = this.props
+    // fix with redux later
+    const mapId = this.props.match.params.mapId
+    const mapImage = this.state.allMapImages[mapId - 1]
+
     return (
       <div>
-        <Row>
-          {this.state.allMapImages && (
-            <div>
-              {this.state.allMapImages.map(mapImage => (
-                <div key={mapImage.id}>
-                  <Col m={4} s={12}>
-                    <MapCard mapImage={mapImage} />
-                  </Col>
-                </div>
-              ))}
-            </div>
-          )}
-        </Row>
-
-        {/* <h3>Welcome, {email}</h3> */}
-        {/* <Button>Click Here</Button> */}
+        <canvas id="tutorial" width="150" height="150">
+          <img src={mapImage.imageUrl} width="150" height="150" />
+        </canvas>
       </div>
     )
   }
@@ -76,11 +62,4 @@ const mapState = state => {
   }
 }
 
-export default connect(mapState)(AllMapsScreen)
-
-/**
- * PROP TYPES
- */
-AllMapsScreen.propTypes = {
-  email: PropTypes.string
-}
+export default connect(mapState)(SingleMapScreen)
