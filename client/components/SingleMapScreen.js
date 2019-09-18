@@ -46,7 +46,7 @@ class SingleMapScreen extends Component {
 
     return (
       <div>
-        <Canvas />
+        <Canvas mapImage={mapImage} />
       </div>
     )
   }
