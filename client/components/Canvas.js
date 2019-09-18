@@ -5,7 +5,7 @@ export default class Canvas extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      squareSize: 20,
+      squareSize: 40,
       canvasSize: {canvasWidth: 800, canvasHeight: 600}
     }
   }
@@ -14,7 +14,21 @@ export default class Canvas extends Component {
     const {canvasWidth, canvasHeight} = this.state.canvasSize
     this.canvasSquare.width = canvasWidth
     this.canvasSquare.height = canvasHeight
-    this.drawSquare(this.canvasSquare, {x: 50, y: 50})
+    this.makeGrid()
+  }
+
+  makeGrid() {
+    const squareLength = this.state.squareSize
+    const rows = this.canvasSquare.height / squareLength
+    const columns = this.canvasSquare.width / squareLength
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < columns; j++) {
+        this.drawSquare(this.canvasSquare, {
+          x: squareLength * j,
+          y: squareLength * i
+        })
+      }
+    }
   }
 
   drawSquare(canvasID, coordinates) {
