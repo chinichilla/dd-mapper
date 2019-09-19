@@ -46,6 +46,7 @@ export default class Canvas extends Component {
 
   render() {
     console.log(this.props.mapImage.imageUrl)
+    // https://konvajs.org/docs/sandbox/Zooming_Relative_To_Pointer.html -- zoom feature
     return (
       <div>
         <canvas
