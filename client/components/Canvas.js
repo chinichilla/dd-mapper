@@ -12,18 +12,47 @@ export default class Canvas extends Component {
 
   componentDidMount() {
     const {canvasWidth, canvasHeight} = this.state.canvasSize
-    this.canvasSquare.width = canvasWidth
-    this.canvasSquare.height = canvasHeight
-    this.makeGrid()
+    this.canvasFootprint.width = canvasWidth
+    this.canvasFootprint.height = canvasHeight
+    this.makeMapWithGrid()
+  }
+
+  makeMapWithGrid() {
+    this.drawBackground() // make backgroundMap layer
+    this.makeGrid() // make gridLayer
+    // make obscuredView Layer and convert into separate image for later
+  }
+
+  drawBackground() {
+    const backgroundMap = new Image()
+    const ctx = this.canvasFootprint.getContext('2d')
+
+    backgroundMap.src = this.props.mapImage.imageUrl
+    const canvasWidth = this.state.canvasSize.canvasWidth
+    const canvasHeight = this.state.canvasSize.canvasHeight
+    backgroundMap.onload = function() {
+      ctx.drawImage(
+        backgroundMap,
+        0,
+        0,
+        backgroundMap.width,
+        backgroundMap.height,
+        0,
+        0,
+        canvasWidth,
+        canvasHeight
+      )
+    }
   }
 
   makeGrid() {
     const squareLength = this.state.squareSize
-    const rows = this.canvasSquare.height / squareLength
-    const columns = this.canvasSquare.width / squareLength
+    const rows = this.canvasFootprint.height / squareLength
+    const columns = this.canvasFootprint.width / squareLength
+
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < columns; j++) {
-        this.drawSquare(this.canvasSquare, {
+        this.drawSquare(this.canvasFootprint, {
           x: squareLength * j,
           y: squareLength * i
         })
@@ -31,8 +60,8 @@ export default class Canvas extends Component {
     }
   }
 
-  drawSquare(canvasID, coordinates) {
-    const ctx = canvasID.getContext('2d')
+  drawSquare(canvasId, coordinates) {
+    const ctx = canvasId.getContext('2d', {alpha: false})
     ctx.beginPath()
     ctx.rect(
       coordinates.x,
@@ -49,16 +78,16 @@ export default class Canvas extends Component {
     return (
       <div>
         <canvas
-          ref={canvasSquare => (this.canvasSquare = canvasSquare)}
+          id="mapBackground"
+          ref={canvasFootprint => (this.canvasFootprint = canvasFootprint)}
           width={this.state.canvasWidth}
           height={this.state.canvasHeight}
-        >
-          {/* <img
-            src={this.props.mapImage.imageUrl}
-            width={this.state.canvasWidth}
-            height={this.state.canvsHeight}
-          /> */}
-        </canvas>
+        />
+        <canvas
+          id="grid"
+          width={this.state.canvasWidth}
+          height={this.state.canvasHeight}
+        />
       </div>
     )
   }
