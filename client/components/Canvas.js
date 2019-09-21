@@ -18,8 +18,9 @@ export default class Canvas extends Component {
   }
 
   makeMapWithGrid() {
-    this.makeGrid()
-    this.drawBackground()
+    this.drawBackground() // make backgroundMap layer
+    this.makeGrid() // make gridLayer
+    // make obscuredView Layer and convert into separate image for later
   }
 
   drawBackground() {
@@ -49,7 +50,6 @@ export default class Canvas extends Component {
     const rows = this.canvasFootprint.height / squareLength
     const columns = this.canvasFootprint.width / squareLength
 
-    const ctx = this.canvasFootprint.getContext('2d')
     for (let i = 0; i < rows; i++) {
       for (let j = 0; j < columns; j++) {
         this.drawSquare(this.canvasFootprint, {
@@ -61,7 +61,7 @@ export default class Canvas extends Component {
   }
 
   drawSquare(canvasId, coordinates) {
-    const ctx = canvasId.getContext('2d')
+    const ctx = canvasId.getContext('2d', {alpha: false})
     ctx.beginPath()
     ctx.rect(
       coordinates.x,
@@ -78,16 +78,16 @@ export default class Canvas extends Component {
     return (
       <div>
         <canvas
+          id="mapBackground"
           ref={canvasFootprint => (this.canvasFootprint = canvasFootprint)}
           width={this.state.canvasWidth}
           height={this.state.canvasHeight}
-        >
-          {/* <img
-            src={this.props.mapImage.imageUrl}
-            width={this.state.canvasWidth}
-            height={this.state.canvsHeight}
-          /> */}
-        </canvas>
+        />
+        <canvas
+          id="grid"
+          width={this.state.canvasWidth}
+          height={this.state.canvasHeight}
+        />
       </div>
     )
   }
