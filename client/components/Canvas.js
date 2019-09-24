@@ -19,7 +19,7 @@ export default class Canvas extends Component {
 
   makeMapWithGrid() {
     this.drawBackground() // make backgroundMap layer
-    this.makeGrid() // make gridLayer
+    // this.makeGrid() // make gridLayer
     // make obscuredView Layer and convert into separate image for later
   }
 
@@ -45,33 +45,33 @@ export default class Canvas extends Component {
     }
   }
 
-  makeGrid() {
-    const squareLength = this.state.squareSize
-    const rows = this.canvasFootprint.height / squareLength
-    const columns = this.canvasFootprint.width / squareLength
+  // makeGrid() {
+  //   const squareLength = this.state.squareSize
+  //   const rows = this.canvasFootprint.height / squareLength
+  //   const columns = this.canvasFootprint.width / squareLength
 
-    for (let i = 0; i < rows; i++) {
-      for (let j = 0; j < columns; j++) {
-        this.drawSquare(this.canvasFootprint, {
-          x: squareLength * j,
-          y: squareLength * i
-        })
-      }
-    }
-  }
+  //   for (let i = 0; i < rows; i++) {
+  //     for (let j = 0; j < columns; j++) {
+  //       this.drawSquare(this.canvasFootprint, {
+  //         x: squareLength * j,
+  //         y: squareLength * i
+  //       })
+  //     }
+  //   }
+  // }
 
-  drawSquare(canvasId, coordinates) {
-    const ctx = canvasId.getContext('2d', {alpha: false})
-    ctx.beginPath()
-    ctx.rect(
-      coordinates.x,
-      coordinates.y,
-      this.state.squareSize,
-      this.state.squareSize
-    )
-    ctx.stroke()
-    ctx.closePath()
-  }
+  // drawSquare(canvasId, coordinates) {
+  //   const ctx = canvasId.getContext('2d', {alpha: false})
+  //   ctx.beginPath()
+  //   ctx.rect(
+  //     coordinates.x,
+  //     coordinates.y,
+  //     this.state.squareSize,
+  //     this.state.squareSize
+  //   )
+  //   ctx.stroke()
+  //   ctx.closePath()
+  // }
 
   render() {
     console.log(this.props.mapImage.imageUrl)
@@ -80,11 +80,6 @@ export default class Canvas extends Component {
         <canvas
           id="mapBackground"
           ref={canvasFootprint => (this.canvasFootprint = canvasFootprint)}
-          width={this.state.canvasWidth}
-          height={this.state.canvasHeight}
-        />
-        <canvas
-          id="grid"
           width={this.state.canvasWidth}
           height={this.state.canvasHeight}
         />
