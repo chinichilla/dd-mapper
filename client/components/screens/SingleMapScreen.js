@@ -2,10 +2,6 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Canvas} from '../'
 
-// import {MediaBox} from 'react-materialize'
-// import snapToGrid from './snapToGrid'
-// import {DropTarget} from 'react-dnd'
-
 class SingleMapScreen extends Component {
   constructor(props) {
     super(props)
@@ -47,16 +43,12 @@ class SingleMapScreen extends Component {
 
     return (
       <div>
-        {/* <Canvas mapImage={mapImage} /> */}
         <Canvas mapImage={mapImage} />
       </div>
     )
   }
 }
 
-/**
- * CONTAINER
- */
 const mapState = state => {
   return {
     email: state.user.email
