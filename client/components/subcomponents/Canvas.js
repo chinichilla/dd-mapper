@@ -9,12 +9,12 @@ export default class Canvas extends Component {
       players: [
         {key: 1, coords: {x: 40, y: 50}, text: 'Player 1', color: '#9C4EE0'},
         {key: 2, coords: {x: 40, y: 70}, text: 'Player 2', color: '#D01AB1'},
-        {key: 3, coords: {x: 40, y: 90}, text: 'Player 3', color: '#3F86E0'},
+        {key: 3, coords: {x: 40, y: 90}, text: 'Player 3', color: '#94290F'},
         {key: 4, coords: {x: 40, y: 110}, text: 'Player 4', color: '#33FFA7'},
         {key: 5, coords: {x: 40, y: 130}, text: 'Player 5', color: '#33FFF4'},
         {key: 6, coords: {x: 40, y: 150}, text: 'Player 6', color: '#F47F16'}
       ],
-      gridLength: 100
+      gridLength: 90
     }
   }
 
@@ -29,7 +29,6 @@ export default class Canvas extends Component {
             x={0}
             y={0}
           />
-
           <Grid gridLength={this.state.gridLength} />
           {this.state.players.map(player => (
             <Player

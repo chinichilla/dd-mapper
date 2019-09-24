@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Circle} from 'react-konva'
+import {Text} from 'react-konva'
 
 export default class Player extends Component {
   constructor(props) {
@@ -12,11 +12,11 @@ export default class Player extends Component {
 
   render() {
     return (
-      <Circle
-        // text={this.props.text}
+      <Text
+        text={this.props.text}
         x={this.state.player.x}
         y={this.state.player.y}
-        radius={7}
+        // radius={7}
         draggable
         fill={this.state.isDragging ? 'black' : this.props.color}
         onDragStart={() => {
