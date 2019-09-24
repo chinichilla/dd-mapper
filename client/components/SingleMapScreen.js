@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Canvas} from './Canvas'
-import {CanvasKonva} from './CanvasKonva'
+import Canvas from './Canvas'
 
 // import {MediaBox} from 'react-materialize'
 // import snapToGrid from './snapToGrid'
@@ -49,7 +48,7 @@ class SingleMapScreen extends Component {
     return (
       <div>
         {/* <Canvas mapImage={mapImage} /> */}
-        <CanvasKonva mapImage={mapImage} />
+        <Canvas mapImage={mapImage} />
       </div>
     )
   }

@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import {render} from 'react-dom'
 import {Image} from 'react-konva'
 
 // modififed from konva
