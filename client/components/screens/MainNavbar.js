@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import {logout} from '../store'
+import {logout} from '../../store'
 import {Navbar, NavItem} from 'react-materialize'
 
 const brandColor = <span style={{color: '#FFFFFF'}}>D&D Mapper</span>

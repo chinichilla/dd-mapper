@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import Canvas from './Canvas'
+import {Canvas} from '../'
 
 // import {MediaBox} from 'react-materialize'
 // import snapToGrid from './snapToGrid'

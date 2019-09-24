@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
-import MapCard from './MapCard'
+import {MapCard} from '../'
 import {Row, Col} from 'react-materialize'
 
 /**

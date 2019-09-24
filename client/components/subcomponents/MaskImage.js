@@ -31,22 +31,22 @@ export default class URLImage extends Component {
   }
   render() {
     return (
-      //   <Image
-      //     x={this.props.x}
-      //     y={this.props.y}
-      //     image={this.state.image}
-      //     ref={node => {
-      //       this.imageNode = node
-      //     }}
-      //   />
-      <Rect
-        x={0}
-        y={0}
-        width={window.innerWidth}
-        height={window.innerHeight}
-        fill="pink"
-        opacity="0.5"
+      <Image
+        x={this.props.x}
+        y={this.props.y}
+        image={this.state.image}
+        ref={node => {
+          this.imageNode = node
+        }}
       />
+      //   <Rect
+      //     x={0}
+      //     y={0}
+      //     width={window.innerWidth}
+      //     height={window.innerHeight}
+      //     fill="pink"
+      //     opacity="0.5"
+      //   />
     )
   }
 }
