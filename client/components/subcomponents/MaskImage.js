@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Image, Rect} from 'react-konva'
+import {Image} from 'react-konva'
 
 // modififed from konva
 export default class URLImage extends Component {

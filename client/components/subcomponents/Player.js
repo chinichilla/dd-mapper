@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
-import {Text, Circle} from 'react-konva'
+import {Circle} from 'react-konva'
 
 export default class Player extends Component {
   constructor(props) {
     super(props)
     this.state = {
       isDragging: false,
-      player: {x: this.props.playerCoords.x, y: this.props.playerCoords.y}
+      player: {x: this.props.coords.x, y: this.props.coords.y}
     }
   }
 

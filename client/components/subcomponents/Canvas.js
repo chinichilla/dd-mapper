@@ -6,12 +6,14 @@ export default class Canvas extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      playerCoords1: {x: 40, y: 50},
-      playerCoords2: {x: 40, y: 70},
-      playerCoords3: {x: 40, y: 90},
-      playerCoords4: {x: 40, y: 110},
-      playerCoords5: {x: 40, y: 130},
-
+      players: [
+        {key: 1, coords: {x: 40, y: 50}, text: 'Player 1', color: '#9C4EE0'},
+        {key: 2, coords: {x: 40, y: 70}, text: 'Player 2', color: '#D01AB1'},
+        {key: 3, coords: {x: 40, y: 90}, text: 'Player 3', color: '#3F86E0'},
+        {key: 4, coords: {x: 40, y: 110}, text: 'Player 4', color: '#33FFA7'},
+        {key: 5, coords: {x: 40, y: 130}, text: 'Player 5', color: '#33FFF4'},
+        {key: 6, coords: {x: 40, y: 150}, text: 'Player 6', color: '#F47F16'}
+      ],
       gridLength: 100
     }
   }
@@ -29,31 +31,14 @@ export default class Canvas extends Component {
           />
 
           <Grid gridLength={this.state.gridLength} />
-          <Player
-            playerCoords={this.state.playerCoords1}
-            text="Player 1"
-            color="#9C4EE0"
-          />
-          <Player
-            playerCoords={this.state.playerCoords2}
-            text="Player 2"
-            color="#D01AB1"
-          />
-          <Player
-            playerCoords={this.state.playerCoords3}
-            text="Player 3"
-            color="#3F86E0"
-          />
-          <Player
-            playerCoords={this.state.playerCoords4}
-            text="Player 4"
-            color="#33FFA7"
-          />
-          <Player
-            playerCoords={this.state.playerCoords5}
-            text="Player 5"
-            color="#33FFF4"
-          />
+          {this.state.players.map(player => (
+            <Player
+              key={player.key}
+              coords={player.coords}
+              text={player.text}
+              color={player.color}
+            />
+          ))}
         </Layer>
       </Stage>
     )
