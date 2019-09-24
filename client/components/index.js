@@ -1,14 +1,17 @@
 // screen and navbar components
-export {default as MainNavbar} from './MainNavbar'
-export {default as MainFooter} from './MainFooter'
-export {default as AllMapsScreen} from './AllMapsScreen'
-export {default as MapUploadScreen} from './MapUploadScreen'
-export {default as SingleMapScreen} from './SingleMapScreen'
-export {Login, Signup} from './AuthForm'
+export {default as MainNavbar} from './screens/MainNavbar'
+export {default as MainFooter} from './screens/MainFooter'
+export {default as AllMapsScreen} from './screens/AllMapsScreen'
+export {default as MapUploadScreen} from './screens/MapUploadScreen'
+export {default as SingleMapScreen} from './screens/SingleMapScreen'
+export {Login, Signup} from './screens/AuthForm'
 
-// canvas components
-export {default as Canvas} from './Canvas'
-export {default as Grid} from './canvasComponents/Grid'
-export {default as MaskImage} from './canvasComponents/MaskImage'
-export {default as Player} from './canvasComponents/Player'
-export {default as URLImage} from './canvasComponents/URLImage'
+// canvas subcomponents
+export {default as Canvas} from './subcomponents/Canvas'
+export {default as Grid} from './subcomponents/Grid'
+export {default as MaskImage} from './subcomponents/MaskImage'
+export {default as Player} from './subcomponents/Player'
+export {default as URLImage} from './subcomponents/URLImage'
+
+// other subcomponents
+export {default as MapCard} from './subcomponents/MapCard'

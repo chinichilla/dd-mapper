@@ -1,5 +1,5 @@
 import React from 'react'
-import {MainNavbar, MainFooter} from './components'
+import {MainNavbar, MainFooter} from './components/'
 import Routes from './Routes'
 
 const App = () => {
