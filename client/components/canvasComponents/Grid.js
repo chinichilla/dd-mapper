@@ -1,13 +1,7 @@
 import React, {Component} from 'react'
-import {render} from 'react-dom'
 import {Line} from 'react-konva'
 
 export default class Grid extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
-
   makeGrid() {
     const gridLength = this.props.gridLength
 
