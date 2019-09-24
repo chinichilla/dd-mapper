@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
-import {Stage, Layer, Text, Image} from 'react-konva'
-import useImage from 'use-image'
+import {Stage, Layer, Text} from 'react-konva'
+import URLImage from './URLImage'
 
 export class CanvasKonva extends Component {
   constructor(props) {
@@ -14,17 +14,11 @@ export class CanvasKonva extends Component {
   }
 
   render() {
-    const resizedImage = this.props.mapImage.imageUrl
-    const MapImage = () => {
-      const [image] = useImage(resizedImage)
-      return <Image image={image} />
-    }
-
+    const imageUrl = this.props.mapImage.imageUrl
     return (
       <Stage width={window.innerWidth} height={window.innerHeight}>
         <Layer>
-          <MapImage />
-
+          <URLImage src={imageUrl} x={0} y={0} />
           <Text
             text="Draggable Text"
             x={this.state.x}
