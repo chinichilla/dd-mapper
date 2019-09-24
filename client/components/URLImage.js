@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
+import {render} from 'react-dom'
+import {Image} from 'react-konva'
 
+// modififed from konva
 export default class URLImage extends Component {
   state = {
     image: null
@@ -18,6 +21,8 @@ export default class URLImage extends Component {
   loadImage() {
     this.image = new window.Image()
     this.image.src = this.props.src
+    this.image.width = window.innerWidth
+    this.image.height = window.innerHeight
     this.image.addEventListener('load', this.handleLoad)
   }
   handleLoad = () => {

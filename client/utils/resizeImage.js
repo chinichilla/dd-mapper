@@ -1,3 +1,3 @@
-export const cityLister = image => {
+export const resizeImage = image => {
   return image
 }
