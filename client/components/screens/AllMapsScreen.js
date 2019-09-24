@@ -1,12 +1,7 @@
 import React, {Component} from 'react'
-import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {MapCard} from '../'
 import {Row, Col} from 'react-materialize'
-
-/**
- * COMPONENT
- */
 
 class AllMapsScreen extends Component {
   constructor(props) {
@@ -43,7 +38,7 @@ class AllMapsScreen extends Component {
   }
 
   render() {
-    const {email} = this.props
+    // const {email} = this.props
     return (
       <div>
         <Row>
@@ -77,10 +72,3 @@ const mapState = state => {
 }
 
 export default connect(mapState)(AllMapsScreen)
-
-/**
- * PROP TYPES
- */
-AllMapsScreen.propTypes = {
-  email: PropTypes.string
-}
