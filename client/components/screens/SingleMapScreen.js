@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Canvas} from '../'
 
 class SingleMapScreen extends Component {
   constructor(props) {
@@ -43,7 +42,7 @@ class SingleMapScreen extends Component {
 
     return (
       <div>
-        <Canvas mapImage={mapImage} />
+        <h1>hi</h1>
       </div>
     )
   }

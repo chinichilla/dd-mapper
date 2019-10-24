@@ -54,9 +54,6 @@ class AllMapsScreen extends Component {
             </div>
           )}
         </Row>
-
-        {/* <h3>Welcome, {email}</h3> */}
-        {/* <Button>Click Here</Button> */}
       </div>
     )
   }
