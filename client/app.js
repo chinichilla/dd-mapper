@@ -4,7 +4,7 @@ import Routes from './Routes'
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
       <MainNavbar />
       <Routes />
       <MainFooter />
