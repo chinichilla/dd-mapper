@@ -1,6 +1,7 @@
 import Konva from 'konva'
 const uuidv1 = require('uuid/v1')
-export const addTextNode = (stage, layer) => {
+
+const addTextNode = (stage, layer) => {
   const id = uuidv1()
 
   const textNode = new Konva.Text({
@@ -157,3 +158,5 @@ export const addTextNode = (stage, layer) => {
   })
   return id
 }
+
+export default addTextNode

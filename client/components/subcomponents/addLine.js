@@ -1,6 +1,6 @@
 import Konva from 'konva'
 
-export const addLine = (stage, layer, mode = 'brush') => {
+const addLine = (stage, layer, mode = 'brush') => {
   let isPaint = false
   let lastLine
   stage.on('mousedown touchstart', function(e) {
@@ -29,3 +29,5 @@ export const addLine = (stage, layer, mode = 'brush') => {
     layer.batchDraw()
   })
 }
+
+export default addLine
