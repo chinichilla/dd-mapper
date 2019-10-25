@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {MapCard} from '../'
+import {MapCard, UploadCard} from '../'
 import {Row, Col} from 'react-materialize'
 
 class AllMapsScreen extends Component {
@@ -20,16 +20,6 @@ class AllMapsScreen extends Component {
         },
         {
           id: 3,
-          imageUrl:
-            'https://media.wizards.com/2015/images/dnd/resources/Sword-Coast-Map_LowRes.jpg'
-        },
-        {
-          id: 4,
-          imageUrl:
-            'https://media.wizards.com/2015/images/dnd/resources/Sword-Coast-Map_LowRes.jpg'
-        },
-        {
-          id: 5,
           imageUrl:
             'https://media.wizards.com/2015/images/dnd/resources/Sword-Coast-Map_LowRes.jpg'
         }
@@ -53,6 +43,11 @@ class AllMapsScreen extends Component {
               ))}
             </div>
           )}
+          <div>
+            <Col m={4} s={12}>
+              <UploadCard mapImage={this.state.allMapImages[0]} />
+            </Col>
+          </div>
         </Row>
       </div>
     )
