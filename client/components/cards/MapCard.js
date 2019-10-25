@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, CardTitle} from 'react-materialize'
+import {Card, CardTitle, Button} from 'react-materialize'
 import {Link} from 'react-router-dom'
 
 /**
@@ -12,9 +12,18 @@ const MapCard = props => {
       className="small"
       header={<CardTitle image={mapImage.imageUrl}>Map Title</CardTitle>}
       actions={[
-        <a href={`/maps/${mapImage.id}`} key={mapImage.id}>
-          Link to get to map page
-        </a>
+        <div key={mapImage.id} className="center">
+          <Button
+            className="black"
+            node="a"
+            href={`/maps/${mapImage.id}`}
+            flat
+            waves="light"
+            style={{marginRight: '5px'}}
+          >
+            Link To Map
+          </Button>
+        </div>
       ]}
     >
       Description of the map

@@ -1,6 +1,7 @@
 import React from 'react'
-import {Card, CardTitle} from 'react-materialize'
+import {Card, CardTitle, Modal, Button} from 'react-materialize'
 import {Link} from 'react-router-dom'
+import UploadCardModal from './UploadCardModal'
 
 /**
  * COMPONENT
@@ -10,11 +11,29 @@ const UploadCard = props => {
   return (
     <Card
       className="small"
-      // header={<CardTitle image={mapImage.imageUrl}>Map Title</CardTitle>}
+      header={<CardTitle image={mapImage.imageUrl}>Map Title</CardTitle>}
       actions={[
-        <a href={`/maps/${mapImage.id}`} key={mapImage.id}>
-          Upload A New Map
-        </a>
+        <div key="uploadMap">
+          <Modal
+            header="Upload Another Map"
+            className="center"
+            fixedFooter
+            trigger={
+              <div className="center">
+                <Button
+                  className="blue"
+                  flat
+                  waves="light"
+                  style={{marginRight: '5px'}}
+                >
+                  Upload A New Map
+                </Button>
+              </div>
+            }
+          >
+            <UploadCardModal />
+          </Modal>
+        </div>
       ]}
     />
   )

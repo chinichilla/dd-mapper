@@ -19,7 +19,7 @@ const MainNavbar = ({handleClick, isLoggedIn}) => (
               alignLinks="right"
             >
               <NavItem href="/maps">Maps </NavItem>
-              <NavItem href="/upload">Upload</NavItem>
+              {/* <NavItem href="/upload">Upload</NavItem> */}
               <NavItem href="#" onClick={handleClick}>
                 Logout
               </NavItem>

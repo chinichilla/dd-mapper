@@ -22,16 +22,6 @@ class AllMapsScreen extends Component {
           id: 3,
           imageUrl:
             'https://media.wizards.com/2015/images/dnd/resources/Sword-Coast-Map_LowRes.jpg'
-        },
-        {
-          id: 4,
-          imageUrl:
-            'https://media.wizards.com/2015/images/dnd/resources/Sword-Coast-Map_LowRes.jpg'
-        },
-        {
-          id: 5,
-          imageUrl:
-            'https://media.wizards.com/2015/images/dnd/resources/Sword-Coast-Map_LowRes.jpg'
         }
       ]
     }
