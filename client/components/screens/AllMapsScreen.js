@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {MapCard} from '../'
+import {MapCard, UploadCard} from '../'
 import {Row, Col} from 'react-materialize'
 
 class AllMapsScreen extends Component {
@@ -53,6 +53,11 @@ class AllMapsScreen extends Component {
               ))}
             </div>
           )}
+          <div>
+            <Col m={4} s={12}>
+              <UploadCard mapImage={this.state.allMapImages[0]} />
+            </Col>
+          </div>
         </Row>
       </div>
     )
