@@ -12,17 +12,19 @@ const MainNavbar = ({handleClick, isLoggedIn}) => (
       {isLoggedIn ? (
         <div>
           {/* The navbar will show these links after you log in */}
-          <Navbar
-            className="brand-logo center"
-            brand={brandColor}
-            alignLinks="right"
-          >
-            <NavItem href="/maps">Maps </NavItem>
-            <NavItem href="/upload">Upload</NavItem>
-            <NavItem href="#" onClick={handleClick}>
-              Logout
-            </NavItem>
-          </Navbar>
+          <div>
+            <Navbar
+              className="brand-logo left"
+              brand={brandColor}
+              alignLinks="right"
+            >
+              <NavItem href="/maps">Maps </NavItem>
+              <NavItem href="/upload">Upload</NavItem>
+              <NavItem href="#" onClick={handleClick}>
+                Logout
+              </NavItem>
+            </Navbar>
+          </div>
         </div>
       ) : (
         <div>
