@@ -4,7 +4,14 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
 // import "./SingleMapPage.css";
 import {Stage, Layer} from 'react-konva'
-import {Grid, Image, MapBackground, MaskLayer, add, addLine} from '../index'
+import {
+  Grid,
+  Image,
+  MapBackground,
+  MaskLayer,
+  addTextNode,
+  addLine
+} from '../index'
 
 const uuidv1 = require('uuid/v1')
 
