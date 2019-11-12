@@ -93,7 +93,7 @@ function SingleMapScreen(props) {
 
   return (
     <div className="home-page">
-      <ButtonGroup>
+      <ButtonGroup className="center">
         <Button variant="secondary" onClick={() => toggleGrid(!gridVisible)}>
           Grid
         </Button>
