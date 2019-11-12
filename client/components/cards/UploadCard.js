@@ -1,6 +1,6 @@
 import React from 'react'
 import {Card, CardTitle, Modal, Button} from 'react-materialize'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import UploadCardModal from './UploadCardModal'
 
 /**
@@ -21,7 +21,7 @@ const UploadCard = props => {
             trigger={
               <div className="center">
                 <Button
-                  className="blue"
+                  className="white-text text-darken-2 color blue"
                   flat
                   waves="light"
                   style={{marginRight: '5px'}}
